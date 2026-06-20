@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# =============================================================================
+# Credit Simulator — root-level executable
+# Usage:
+#   ./credit_simulator                      (interactive mode)
+#   ./credit_simulator file_inputs.txt      (file input mode)
+# =============================================================================
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+JAR="${SCRIPT_DIR}/target/credit_simulator.jar"
+
+# Build if JAR doesn't exist
+if [ ! -f "$JAR" ]; then
+    echo "[INFO] JAR not found. Building project with Maven..."
+    cd "$SCRIPT_DIR"
+    ./mvnw package -DskipTests -q
+    echo "[INFO] Build complete."
+fi
+
+exec java -jar "$JAR" "$@"

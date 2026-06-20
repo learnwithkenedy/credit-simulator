@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# =============================================================================
+# Credit Simulator — bin/ entry point
+# Usage:
+#   bin/credit_simulator                    (interactive mode)
+#   bin/credit_simulator file_inputs.txt    (file input mode)
+# =============================================================================
+set -euo pipefail
+
+# Resolve project root (one level up from bin/)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+JAR="${PROJECT_ROOT}/target/credit_simulator.jar"
+
+# Build if JAR doesn't exist
+if [ ! -f "$JAR" ]; then
+    echo "[INFO] JAR not found. Building project with Maven..."
+    cd "$PROJECT_ROOT"
+    mvn package -DskipTests -q
+    echo "[INFO] Build complete."
+fi
+
+exec java -jar "$JAR" "$@"

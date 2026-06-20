@@ -1,0 +1,11 @@
+/Users/kenedy/test/tests/src/main/java/com/creditsimulator/Main.java
+/Users/kenedy/test/tests/src/main/java/com/creditsimulator/controllers/LoanController.java
+/Users/kenedy/test/tests/src/main/java/com/creditsimulator/exceptions/ValidationException.java
+/Users/kenedy/test/tests/src/main/java/com/creditsimulator/factories/VehicleFactory.java
+/Users/kenedy/test/tests/src/main/java/com/creditsimulator/models/InstallmentResult.java
+/Users/kenedy/test/tests/src/main/java/com/creditsimulator/models/LoanCalculation.java
+/Users/kenedy/test/tests/src/main/java/com/creditsimulator/models/Vehicle.java
+/Users/kenedy/test/tests/src/main/java/com/creditsimulator/models/VehicleCondition.java
+/Users/kenedy/test/tests/src/main/java/com/creditsimulator/models/VehicleType.java
+/Users/kenedy/test/tests/src/main/java/com/creditsimulator/services/ApiService.java
+/Users/kenedy/test/tests/src/main/java/com/creditsimulator/views/ConsoleView.java
